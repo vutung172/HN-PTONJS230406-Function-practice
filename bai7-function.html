@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //kiểm tra số chẵn lẻ
+        function ktrChanLe (number,callback) {
+            if (callback(number))
+                return true
+            else 
+                return false
+        }
+        // ví dụ
+        console.log(ktrChanLe(12, (n) => n % 2 != 0)) //kiểm tra số lẻ
+        console.log(ktrChanLe(12, (n) => n % 2 == 0)) //kiểm tra số chẵn
+
+        // Kiểm tra số số nguyên tố
+        function ktrNguyenTo (number) {
+            if (number<=1) {return false}
+            for (i= 2; i < number; i++) {
+                if (number % i === 0) {
+                    return false
+                } 
+            }
+            return true
+        }
+
+        console.log(ktrNguyenTo(10))
+
+        // Kiểm tra số hoàn hảo: là các số mà tổng ước của số đó bằng chính số đó
+        function ktrHoanHao (number)    {
+            if (number <=1 ) {return false}
+            let sum = 1
+            for (i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    sum += i // tính tổng các ước
+                }
+            }
+        return sum == number
+        }
+        console.log(ktrHoanHao(1))
+    </script>
+</body>
+</html>
